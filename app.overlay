@@ -1,4 +1,4 @@
-/{
+/ {
 	gpio_keys {
 		compatible = "gpio-keys";
 		ledyellow: led_yellow {
@@ -7,10 +7,19 @@
 		};
 	};
 	
+	dht11: dht11 {
+		compatible = "aosong,dht";
+		status = "okay";
+		dio-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
+		label = "XHT11";
+	};
+
 	aliases {
 		led-yellow = &ledyellow;
 		lcd-screen = &my_i2c_device;
 	};
+
+	
 };
 
 &i2c0 {
