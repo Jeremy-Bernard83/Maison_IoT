@@ -21,10 +21,8 @@ struct i2c_dt_spec;
 
 #define HELLO_MSG "Hello !"
 #define ZEPHYR_MSG "Zephyr is cool"
-
 #define START_ALERT_MONITORING_MSG_1 "Alarm"
 #define START_ALERT_MONITORING_MSG_2 "Protection"
-
 #define INTRUDER_MSG_1 "INTRUDER"
 #define INTRUDER_MSG_2 "LEAVE !"
 

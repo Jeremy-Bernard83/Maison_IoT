@@ -4,19 +4,28 @@
 		ledyellow: led_yellow {
 			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
 			label = "LED 1";
+		}; 
+
+		button_1: button_1 {
+        	gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
+    	};
+
+    	button_2: button_2 {
+        	gpios = <&gpio0 27 GPIO_ACTIVE_LOW>;
+    	};
+		dht11: dht11 {
+			compatible = "aosong,dht";
+			status = "okay";
+			dio-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
+			label = "XHT11";
 		};
-	};
-	
-	dht11: dht11 {
-		compatible = "aosong,dht";
-		status = "okay";
-		dio-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
-		label = "XHT11";
 	};
 
 	aliases {
 		led-yellow = &ledyellow;
 		lcd-screen = &my_i2c_device;
+		button1 = &button_1;
+		button2 = &button_2;
 	};
 
 	zephyr,user {
